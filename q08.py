@@ -23,4 +23,3 @@ def move(num, log):
 
 
 print("cnt =", move(N, [[0, 0]]))
-# ---------- END ---------- #
