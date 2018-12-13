@@ -5,6 +5,7 @@ Q01
 """
 
 N = 11
+
 while True:
     if str(N) == str(N)[::-1] and \
     "{0:o}".format(N) == "{0:o}".format(N)[::-1] and \
