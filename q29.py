@@ -29,8 +29,8 @@ def connect(num, circuit, usable):
         # 並列抵抗それぞれの次の接続
         else:
             for j in usable[0:i]:
-                tmp = connect(j, circuit, usable[i:])
-                ret = tmp if abs(GOAL - tmp) < abs(GOAL - ret) else ret
+                res = connect(j, circuit, usable[i:])
+                ret = res if abs(GOAL - res) < abs(GOAL - ret) else ret
 
         circuit.pop(num)
 
