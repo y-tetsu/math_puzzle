@@ -39,11 +39,13 @@ def formular(ptn, index, exp):
     式を作る
     """
     form = str(ptn[0])
+
     for i in range(1, len(ptn)):
         if i in index:
             form += exp[index.index(i)] + str(ptn[i])
         else:
             form += str(ptn[i])
+
     return form
 
 
