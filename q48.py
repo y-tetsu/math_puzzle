@@ -13,10 +13,10 @@ def gray_loop(value, base):
     cnt = 1
 
     while True:
-        g_shift = "0" + g_next[0:-1]
+        g_rshift = "0" + g_next[0:-1]
         g_exor = ""
 
-        for i, j in zip(g_next, g_shift):
+        for i, j in zip(g_next, g_rshift):
             g_exor += str("{0:x}".format((int(i, base) - int(j, base)) % base))
 
         if g_exor == value:
