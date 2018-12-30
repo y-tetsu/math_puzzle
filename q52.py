@@ -54,6 +54,7 @@ def check(pattern):
                 loop = False
                 break
             else:
+                # 今回のパターンを記憶する
                 memo[tpl] = True
 
                 # 1分経過
