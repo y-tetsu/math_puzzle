@@ -18,7 +18,7 @@ class Hourglass:
 
     def count_down(self):
         """
-        1分経過
+        1分経過 & 空になったら通知
         """
         if self.remain > 0:
             self.remain -= 1
