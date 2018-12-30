@@ -7,12 +7,12 @@ Q51
 
 def perfect_shuffle(num):
     """
-    2*(num-1)回でもとにもどるかチェックする
+    2*(num-1)回のシャッフルでもとにもどるかどうか返す
     """
     cards = [i for i in range(1, 2 * num + 1)]
     goal = cards[:]
 
-    for _ in range(1, 2 * (num - 1) + 1):
+    for _ in range(2 * (num - 1)):
         tmp = []
 
         for i in range(num):
@@ -25,7 +25,7 @@ def perfect_shuffle(num):
 
 def check():
     """
-    1から100まで求める
+    1から100までチェックする
     """
     cnt = 0
 
