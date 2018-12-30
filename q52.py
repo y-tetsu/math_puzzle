@@ -47,9 +47,9 @@ def check(pattern):
     while loop:
         # 砂時計を一周する
         for i in range(len(pattern)):
-            # 確認済みの状態か
             tpl = tuple([i] + [j.remain for j in hourglasses])
 
+            # 確認済みの状態か
             if tpl in memo:
                 loop = False
                 break
