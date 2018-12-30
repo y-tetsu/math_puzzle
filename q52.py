@@ -14,12 +14,11 @@ class Hourglass:
     砂時計
     """
     def __init__(self, minute):
-        self.minute = minute
-        self.remain = minute
+        self.minute = self.remain = minute
 
     def count_down(self):
         """
-        時間経過
+        1分経過
         """
         if self.remain > 0:
             self.remain -= 1
@@ -40,12 +39,7 @@ def check(pattern):
     """
     砂時計が同時に落ちるかチェック
     """
-    hourglasses = []
-
-    # 砂時計を準備
-    for i in pattern:
-        hourglasses += [Hourglass(i)]
-
+    hourglasses = [Hourglass(i) for i in pattern]
     memo = {}
     ret = 0
     loop = True
@@ -62,21 +56,18 @@ def check(pattern):
             else:
                 memo[tpl] = True
 
-            # 1分経過
-            cnt = 0
+                # 1分経過
+                cnt = sum([j.count_down() for j in hourglasses])
 
-            for j in hourglasses:
-                cnt += j.count_down()
-
-            # すべての砂が同時に落ちた
-            if cnt == len(hourglasses):
-                ret = 1
-                loop = False
-                break
-
-            # ひっくり返す
-            for offset in range(hourglasses[i].minute):
-                hourglasses[(i + offset) % len(hourglasses)].upset()
+                # すべての砂が同時に落ちた
+                if cnt == len(hourglasses):
+                    ret = 1
+                    loop = False
+                    break
+                else:
+                    # ひっくり返す
+                    for offset in range(hourglasses[i].minute):
+                        hourglasses[(i + offset) % len(hourglasses)].upset()
 
     return ret
 
