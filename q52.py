@@ -14,7 +14,7 @@ class Hourglass:
     砂時計
     """
     def __init__(self, minute):
-        self.minute = self.remain = minute
+        self.capacity = self.remain = minute
 
     def count_down(self):
         """
@@ -32,7 +32,7 @@ class Hourglass:
         """
         ひっくり返す
         """
-        self.remain = self.minute - self.remain
+        self.remain = self.capacity - self.remain
 
 
 def check(pattern):
@@ -66,7 +66,7 @@ def check(pattern):
                     break
                 else:
                     # ひっくり返す
-                    for offset in range(hourglasses[i].minute):
+                    for offset in range(hourglasses[i].capacity):
                         hourglasses[(i + offset) % len(hourglasses)].upset()
 
     return ret
