@@ -1,4 +1,4 @@
-#!/usr/bin/env puthon
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
 Q53
