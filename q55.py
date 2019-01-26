@@ -14,8 +14,8 @@ class Soroban:
     memo = {}
 
     def __init__(self, digit):
-        self.go_tama = [0 for i in range(digit)]
-        self.ichi_tama = [0 for i in range(digit)]
+        self.go_tama = [0] * digit
+        self.ichi_tama = [0] * digit
         self.digit = digit
         self.move = 0
 
@@ -70,16 +70,18 @@ class Soroban:
         for i in num_list:
             self.add(i)
 
+        return self.move
+
 
 CNT = 0
 LIST = []
 
 for ptn in itertools.permutations([i + 1 for i in range(10)]):
     soroban = Soroban(2)
-    soroban.add_list(ptn)
+    cnt = soroban.add_list(ptn)
 
-    if CNT == 0 or soroban.move < CNT:
-        CNT = soroban.move
+    if CNT == 0 or cnt < CNT:
+        CNT = cnt
         LIST = ptn
 
 print("result =", CNT, LIST)
