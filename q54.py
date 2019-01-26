@@ -25,4 +25,4 @@ def search(cards, num):
     return cnt
 
 
-print(search([0 for i in range(N * 2)], N))
+print(search([0] * (N * 2), N))
