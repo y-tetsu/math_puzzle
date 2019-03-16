@@ -20,9 +20,9 @@ def search(x, y, path):
 
     count = 0
 
-    for move in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
-        next_x = x + move[0]
-        next_y = y + move[1]
+    for delta_x, delta_y in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
+        next_x = x + delta_x
+        next_y = y + delta_y
 
         if (next_x, next_y) not in next_path:
             if 0 <= next_x < M and 0 <= next_y < N:
