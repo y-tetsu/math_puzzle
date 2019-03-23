@@ -5,14 +5,8 @@ Q01
 """
 
 N = 11
-
 while True:
-    DEC_CHECK = str(N) == str(N)[::-1]
-    OCT_CHECK = "{0:o}".format(N) == "{0:o}".format(N)[::-1]
-    BIN_CHECK = "{0:b}".format(N) == "{0:b}".format(N)[::-1]
-
-    if DEC_CHECK and OCT_CHECK and BIN_CHECK:
+    if f'{N}' == f'{N}'[::-1] and f'{N:o}' == f'{N:o}'[::-1] and f'{N:b}' == f'{N:b}'[::-1]:
         print(N)
         break
-
     N += 2
