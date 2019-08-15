@@ -10,6 +10,7 @@ OP = ["+", "-", "*", "/", ""]
 
 for val in range(1000, 10000):
     c = str(val)
+
     for op1, op2, op3 in itertools.product(OP, repeat=3):
         form = c[3] + op1 + c[2] + op2 + c[1] + op3 + c[0]
 
