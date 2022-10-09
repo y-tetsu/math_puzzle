@@ -1,15 +1,10 @@
-#!/usr/bin/env python
+"""Q01
 """
-Q01
-"""
-
-N = 11
-
-while True:
-    dec_s, oct_s, bin_s = f'{N}', f'{N:o}', f'{N:b}'
-
-    if dec_s == dec_s[::-1] and oct_s == oct_s[::-1] and bin_s == bin_s[::-1]:
-        print(N)
-        break
-
-    N += 2
+if __name__ == '__main__':
+    n = 11
+    while True:
+        d, o, b = f'{n}', f'{n:o}', f'{n:b}'
+        if d == d[::-1] and o == o[::-1] and b == b[::-1]:
+            print(n)
+            break
+        n += 2
