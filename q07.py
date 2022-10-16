@@ -14,7 +14,7 @@ if __name__ == '__main__':
         d1_binr = d1_bin[::-1]           # 並び替える
         d1_decr = int(d1_binr, 2)        # 2進数を10進数に変換
         if d1_dec == d1_decr:
-            print(d1_text + " : " + d1_bin)
+            print(f'{d1_text} : {d1_bin}')
         if d1_text == date2:
             break
         datet1 += datetime.timedelta(days=1)

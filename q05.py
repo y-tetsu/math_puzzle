@@ -15,4 +15,5 @@ def change_cnt(cash, coins, maxcnt):
 
 
 if __name__ == '__main__':
-    print("cnt =", change_cnt(1000, [10, 50, 100, 500], 15))
+    cnt = change_cnt(1000, [10, 50, 100, 500], 15)
+    print(f'cnt = {cnt}')

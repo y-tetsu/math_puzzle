@@ -2,6 +2,7 @@
 """
 N = 100  # カード枚数
 
+
 if __name__ == '__main__':
     card = [False for i in range(N)]
     # カードを裏返す
@@ -11,4 +12,4 @@ if __name__ == '__main__':
     # 結果表示
     for i in range(0, N):
         if not card[i]:
-            print(str(i+1))
+            print(f'{i+1}')

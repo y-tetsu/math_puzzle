@@ -16,10 +16,9 @@ if __name__ == '__main__':
             skill = s * 10000 + k * 1000 + i * 100 + l * 10 + l
             if read + write + talk == skill:
                 count += 1
-                print("(" + str(count) + ")")
-                print("read  = " + str(read))
-                print("write = " + str(write))
-                print("talk  = " + str(talk))
-                print("skill = " + str(skill))
-                print("")
-    print("result = " + str(count))
+                print(f'({count})')
+                print(f'read  = {read}')
+                print(f'write = {write}')
+                print(f'talk  = {talk}')
+                print(f'skill = {skill}\n')
+    print(f'result = {count}')

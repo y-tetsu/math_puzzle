@@ -8,7 +8,7 @@ def cutbar(n, m):
     while num < n:
         num += m if num > m else num
         count += 1
-    print("n = " + str(n) + " m = " + str(m) + " count = " + str(count))
+    print(f'n = {n} m = {m} count = {count}')
 
 
 if __name__ == '__main__':

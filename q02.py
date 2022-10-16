@@ -4,7 +4,8 @@ import re
 import itertools
 
 
-OP = ["+", "-", "*", "/", ""]
+# OP = ['+', '-', '*', '/', '']
+OP = ['*', '']
 
 
 if __name__ == '__main__':
@@ -18,4 +19,4 @@ if __name__ == '__main__':
             if not re.search(r'/0', form):
                 if len(form) > 4:
                     if val == eval(form):
-                        print(form, " = ", val)
+                        print(f'{form} = {val}')

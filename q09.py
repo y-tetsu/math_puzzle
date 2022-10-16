@@ -14,4 +14,4 @@ if __name__ == '__main__':
                     ary[i][j] += ary[i-1][j]
                 if j > 0:
                     ary[i][j] += ary[i][j-1]
-    print(ary[B - 1][G - 2] + ary[B - 2][G - 1])
+    print(ary[B-1][G-2] + ary[B-2][G-1])
