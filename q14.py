@@ -1,9 +1,5 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+"""Q14
 """
-Q14
-"""
-
 COUNTRIES = [
     "Brazil",
     "Cameroon",
@@ -37,44 +33,22 @@ COUNTRIES = [
     "Nigeria",
     "Ghana",
     "Algeria",
-    ]
-
-MAX_CNT = 0
-MAX_SHIRITORI = []
+]
 
 
-def shiritori(depth, key, chain):
-    """
-    しりとり
-    """
-    global MAX_CNT
-    global MAX_SHIRITORI
-    total_cnt = 0
-
-    # キーワードで始まる国を探す
-    next_countries = []
-    for i in COUNTRIES:
-        if i[0].upper() == key[0].upper():
-            next_countries += [i]
-
-    if not next_countries:
-        return 0
-
-    for i in next_countries:
-        if i not in chain:
-            chain.append(i)
-
-            total_cnt = shiritori(depth + 1, i[-1].upper(), chain)
-            if total_cnt > MAX_CNT:
-                MAX_CNT = total_cnt
-                MAX_SHIRITORI = chain[:]
-
-            chain.pop()
-
-    return depth
+def search(key, keys, buf):
+    """最大しりとりを取得"""
+    max_shiritori = [i for i in buf]
+    for next_key in keys:
+        if not key or key[-1].upper() == next_key[0].upper():
+            buf.append(next_key)
+            s = search(next_key, [i for i in keys if i != next_key], buf)
+            if len(s) > len(max_shiritori):
+                max_shiritori = [i for i in s]
+            buf.pop()
+    return max_shiritori
 
 
-for country in COUNTRIES:
-    shiritori(0, country, [])
-
-print(MAX_CNT, " : ", MAX_SHIRITORI)
+if __name__ == '__main__':
+    s = search("", COUNTRIES, [])
+    print(str(len(s)), " : ", s)
