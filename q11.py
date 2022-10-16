@@ -1,19 +1,12 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+"""Q11
 """
-Q11
-"""
-
-A = B = 1
-COUNT = 0
-
-while COUNT < 11:
-    C = A + B
-
-    if C % sum([int(i) for i in str(C)]) == 0:
-        if COUNT > 5:
-            print(C)
-
-        COUNT += 1
-
-    A, B = B, C
+if __name__ == '__main__':
+    a = b = 1
+    count = 0
+    while count < 11:
+        c = a + b
+        if c % sum([int(i) for i in str(c)]) == 0:
+            if count > 5:
+                print(c)
+            count += 1
+        a, b = b, c
