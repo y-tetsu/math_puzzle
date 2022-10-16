@@ -22,8 +22,8 @@ def sum_max(num, roulette):
 
 
 if __name__ == '__main__':
-    c = 0
+    cnt = 0
     for n in range(2, 36+1):
         if sum_max(n, E) < sum_max(n, A):
-            c += 1
-    print(f'answer = {c}')
+            cnt += 1
+    print(f'cnt = {cnt}')

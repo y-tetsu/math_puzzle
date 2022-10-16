@@ -14,7 +14,7 @@ def is_loop(num):
 
 
 if __name__ == '__main__':
-    c = 0
+    cnt = 0
     for i in range(2, 10001, 2):
-        c += is_loop(i)
-    print(f'result = {c}')
+        cnt += is_loop(i)
+    print(f'cnt = {cnt}')

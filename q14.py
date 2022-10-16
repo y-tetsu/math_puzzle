@@ -26,4 +26,4 @@ def search(key, keys, buf):
 
 if __name__ == '__main__':
     s = search('', COUNTRIES, [])
-    print(f'{len(s)} : {s}')
+    print(f'cnt = {len(s)} : {s}')
