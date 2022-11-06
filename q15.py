@@ -1,6 +1,5 @@
 """Q15
 """
-
 MAX_STEP = 10
 MAX_MOVE = 3 + 1
 A = 0
@@ -26,4 +25,5 @@ def updown(pos_a, pos_b, route_a, route_b, person):
     return cnt
 
 
-print("cnt =", updown(0, MAX_STEP, [0], [MAX_STEP], A))
+if __name__ == '__main__':
+    print("cnt =", updown(0, MAX_STEP, [0], [MAX_STEP], A))
