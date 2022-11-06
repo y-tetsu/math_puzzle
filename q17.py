@@ -1,27 +1,18 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+"""Q17
 """
-Q17
-"""
-
 N = 30
 BOY = 0
 GIRL = 1
 
 
-def add(seq):
-    """
-    追加
-    """
+def lineup(seq):
     if len(seq) >= N:
         return 1
-
-    cnt = add(seq + [BOY])
-
+    cnt = lineup(seq + [BOY])
     if seq[-1] == BOY:
-        cnt += add(seq + [GIRL])
-
+        cnt += lineup(seq + [GIRL])
     return cnt
 
 
-print("count =", add([BOY]) + add([GIRL]))
+if __name__ == '__main__':
+    print("cnt =", lineup([BOY]) + lineup([GIRL]))
