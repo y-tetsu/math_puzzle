@@ -8,7 +8,7 @@ Python 3.7.6
 | 名称 | 用途 | 使用箇所 | リンク |
 |---|---|---|---|
 |re |正規表現操作 | q02, q12 |https://docs.python.org/ja/3/library/re.html |
-|itertools |効率的なループ実行のためのイテレータ生成関数 | q02, q05, q13, q16 |https://docs.python.org/ja/3/library/itertools.html |
+|itertools |効率的なループ実行のためのイテレータ生成関数 | q02, q05, q13, q16, q20 |https://docs.python.org/ja/3/library/itertools.html |
 |datetime |基本的な日付型および時間型 | q07 |https://docs.python.org/ja/3/library/datetime.html |
 |decimal |十進固定及び浮動小数点数の算術演算 | q12 |https://docs.python.org/ja/3/library/decimal.html |
 |math |数学関数 | q18 |https://docs.python.org/ja/3/library/math.html |
