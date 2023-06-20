@@ -1,7 +1,4 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Q19
+"""Q19
 """
 
 N = 10
@@ -10,32 +7,26 @@ RESULT = []
 
 
 def check(group):
-    """
-    最大何段階ですべて選べるか
+    """最大何段階ですべて選べるか
     """
     ret = 0
-
     for i in group:
         tmp = friends(i, [], group, [i], 1)
 
         if tmp > ret:
             ret = tmp
-
     return ret
 
 
 def friends(member, mlist, group, flist, depth):
-    """
-    何段階で選べるか
+    """何段階で選べるか
     """
     global RESULT
-
     # 約数を探す
     yakusuu = []
     for i in range(2, member):
         if member % i == 0:
             yakusuu += [i]
-
     # 同じ約数の友達を探す
     same = []
     kouho = list(set(group) - set(flist))
@@ -44,52 +35,42 @@ def friends(member, mlist, group, flist, depth):
             if (i % j) == 0:
                 same += [i]
                 break
-
     if set(flist + same) == set(group):
         if depth == MAX_STEP:
             RESULT += [mlist[:]]
-
         return depth
-
     cnt = 0
     ret = 0
-
     for i in same:
         cnt = friends(i, mlist + [member], group, flist + same, depth + 1)
-
         if cnt > ret:
             ret = cnt
-
     return ret
 
 
 def gen_group(num):
-    """
-    合成数を探す
+    """合成数を探す
     """
     ret = []
-
     for i in range(4, num + 1):
         for j in range(2, i):
             if i % j == 0:
                 ret += [i]
                 break
-
     return ret
 
 
-while True:
-    STEP = check(gen_group(N))
+if __name__ == '__main__':
+    while True:
+        STEP = check(gen_group(N))
+        if STEP >= MAX_STEP:
+            print()
+            print("[steps]")
+            for number in RESULT:
+                print(number)
 
-    if STEP >= MAX_STEP:
-        print()
-        print("[steps]")
-        for number in RESULT:
-            print(number)
-
-        print()
-        print("N =", N, "MAX_STEP =", STEP)
-        print("-----")
-        break
-
-    N += 1
+            print()
+            print("N =", N, "MAX_STEP =", STEP)
+            print("-----")
+            break
+        N += 1
