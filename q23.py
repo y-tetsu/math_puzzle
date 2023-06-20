@@ -1,7 +1,4 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-"""
-Q23
+"""Q23
 """
 
 C = 10
@@ -14,14 +11,11 @@ def blackjack(coin, game):
     """
     if coin <= 0:
         return 0
-
     if coin >= 1 and game >= G:
         return 1
-
     cnt = 0
     cnt += blackjack(coin + 1, game + 1)
     cnt += blackjack(coin - 1, game + 1)
-
     return cnt
 
 
