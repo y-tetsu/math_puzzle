@@ -8,10 +8,10 @@ Python 3.7.6
 | 名称 | 用途 | リンク |
 |---|---|---|
 |re |正規表現操作 |https://docs.python.org/ja/3/library/re.html |
-|itertools |||
-|datetime |||
-|decimal |||
-|math |||
+|itertools |効率的なループ実行のためのイテレータ生成関数 |https://docs.python.org/ja/3/library/itertools.html |
+|datetime |基本的な日付型および時間型 |https://docs.python.org/ja/3/library/datetime.html |
+|decimal |十進固定及び浮動小数点数の算術演算 |https://docs.python.org/ja/3/library/decimal.html |
+|math |数学関数 |https://docs.python.org/ja/3/library/math.html |
 |csv |||
 |functools |||
 
