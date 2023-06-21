@@ -4,7 +4,9 @@ from decimal import Decimal
 import re
 
 
-if __name__ == '__main__':
+def solve():
+    """解答
+    """
     i = 1
     while True:
         sqrt = Decimal(i).sqrt()
@@ -13,7 +15,10 @@ if __name__ == '__main__':
             print(f'少数部分のみの場合 :  {i} の平方根は {sqrt:.10f}')
         s = set(list(f'{sqrt:.10f}'.replace('.', ''))[0:10])
         if len(s) == 10:
-            a_comment = '整数部分を含む場合 : '
             print(f'整数部分を含む場合 : {i} の平方根は {sqrt:.10f}')
             break
         i += 1
+
+
+if __name__ == '__main__':
+    solve()

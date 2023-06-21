@@ -3,8 +3,16 @@
 import itertools
 
 
+def solve():
+    """解答
+    """
+    cnt = change_cnt(1000, [10, 50, 100, 500], 15)
+    print(f'cnt = {cnt}')
+
+
 def change_cnt(cash, coins, maxcnt):
-    """両替可能な組み合わせの数"""
+    """両替可能な組み合わせの数
+    """
     cnt = 0
     for i in range(2, maxcnt + 1):
         for j in itertools.combinations_with_replacement(coins, i):
@@ -15,5 +23,4 @@ def change_cnt(cash, coins, maxcnt):
 
 
 if __name__ == '__main__':
-    cnt = change_cnt(1000, [10, 50, 100, 500], 15)
-    print(f'cnt = {cnt}')
+    solve()

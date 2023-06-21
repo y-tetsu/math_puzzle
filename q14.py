@@ -11,8 +11,16 @@ COUNTRIES = [
 ]
 
 
+def solve():
+    """解答
+    """
+    s = search('', COUNTRIES, [])
+    print(f'cnt = {len(s)} : {" → ".join(s)}')
+
+
 def search(key, keys, buf):
-    """最大しりとりを取得"""
+    """最大しりとりを取得
+    """
     max_shiritori = [i for i in buf]
     for next_key in keys:
         if not key or key[-1].upper() == next_key[0].upper():
@@ -25,5 +33,4 @@ def search(key, keys, buf):
 
 
 if __name__ == '__main__':
-    s = search('', COUNTRIES, [])
-    print(f'cnt = {len(s)} : {s}')
+    solve()

@@ -6,8 +6,15 @@ A = 0
 B = 1
 
 
+def solve():
+    """解答
+    """
+    print("cnt =", updown(0, MAX_STEP, [0], [MAX_STEP], A))
+
+
 def updown(pos_a, pos_b, route_a, route_b, person):
-    """Aさんが階段を上り、Bさんが階段を下りる"""
+    """Aさんが階段を上り、Bさんが階段を下りる
+    """
     if person == A and pos_b - pos_a == 0:
         print("> A =", route_a, " B =", route_b)
         return 1
@@ -26,4 +33,4 @@ def updown(pos_a, pos_b, route_a, route_b, person):
 
 
 if __name__ == '__main__':
-    print("cnt =", updown(0, MAX_STEP, [0], [MAX_STEP], A))
+    solve()

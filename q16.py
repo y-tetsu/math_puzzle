@@ -3,7 +3,9 @@
 import itertools
 
 
-if __name__ == '__main__':
+def solve():
+    """解答
+    """
     n = 500
     ret = []
     for i in range(1, int(n/4) + 1):
@@ -12,3 +14,7 @@ if __name__ == '__main__':
             if k[0] + k[1] == pow(i, 2):
                 ret.append(str(float(k[1]/k[0])) + "," + str(float(i*i/k[0])))
     print("cnt =", len(set(ret)))  # 重複を削除し要素数を返す
+
+
+if __name__ == '__main__':
+    solve()

@@ -3,7 +3,9 @@
 import itertools
 
 
-if __name__ == '__main__':
+def solve():
+    """解答
+    """
     cnt = 0
     for (r, e, a, d, w, i, t, l, k, s) in itertools.permutations(range(10)):
         if r == 0 or w == 0 or t == 0 or s == 0:
@@ -20,3 +22,7 @@ if __name__ == '__main__':
             print(f'talk  = {talk}')
             print(f'skill = {skill}\n')
     print(f'cnt = {cnt}')
+
+
+if __name__ == '__main__':
+    solve()

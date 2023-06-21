@@ -3,7 +3,9 @@
 import datetime
 
 
-if __name__ == '__main__':
+def solve():
+    """解答
+    """
     date1 = '19641010'  # 開始年月日
     date2 = '20200724'  # 終了年月日
     datet1 = datetime.datetime.strptime(date1, '%Y%m%d')
@@ -18,3 +20,7 @@ if __name__ == '__main__':
         if d1_text == date2:
             break
         datet1 += datetime.timedelta(days=1)
+
+
+if __name__ == '__main__':
+    solve()

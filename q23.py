@@ -1,13 +1,17 @@
 """Q23
 """
-
 C = 10
 G = 24
 
 
-def blackjack(coin, game):
+def solve():
+    """解答
     """
-    ブラックジャック
+    print("cnt =", blackjack(C, 0))
+
+
+def blackjack(coin, game):
+    """ブラックジャック
     """
     if coin <= 0:
         return 0
@@ -20,4 +24,4 @@ def blackjack(coin, game):
 
 
 if __name__ == "__main__":
-    print("cnt =", blackjack(C, 0))
+    solve()

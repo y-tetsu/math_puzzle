@@ -1,9 +1,15 @@
 """Q21
 """
 
-L = 1
-C = 0
-R = [1]
+
+def solve():
+    """解答
+    """
+    l, c, r = 1, 0, [1]
+    while c < 2014:
+        r, c = add(r, c)
+        l += 1
+    print(f'cnt = {l}')
 
 
 def add(row, cnt):
@@ -18,7 +24,4 @@ def add(row, cnt):
 
 
 if __name__ == '__main__':
-    while C < 2014:
-        R, C = add(R, C)
-        L += 1
-    print(L)
+    solve()

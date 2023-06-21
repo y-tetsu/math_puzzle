@@ -5,6 +5,12 @@ BOY = 0
 GIRL = 1
 
 
+def solve():
+    """解答
+    """
+    print("cnt =", lineup([BOY]) + lineup([GIRL]))
+
+
 def lineup(seq):
     if len(seq) >= N:
         return 1
@@ -15,4 +21,4 @@ def lineup(seq):
 
 
 if __name__ == '__main__':
-    print("cnt =", lineup([BOY]) + lineup([GIRL]))
+    solve()

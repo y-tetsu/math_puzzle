@@ -1,6 +1,10 @@
 """Q11
 """
-if __name__ == '__main__':
+
+
+def solve():
+    """解答
+    """
     a = b = 1
     cnt = 0
     while cnt < 11:
@@ -10,3 +14,7 @@ if __name__ == '__main__':
                 print(c)
             cnt += 1
         a, b = b, c
+
+
+if __name__ == '__main__':
+    solve()

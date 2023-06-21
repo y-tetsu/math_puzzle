@@ -1,9 +1,25 @@
 """Q19
 """
-
-N = 10
 MAX_STEP = 6
 RESULT = []
+
+
+def solve():
+    """解答
+    """
+    n = 10
+    while True:
+        step = check(gen_group(n))
+        if step >= MAX_STEP:
+            print(n)
+            # print("MAX_STEP =", step)
+            # print()
+            # print("[steps]")
+            # for number in RESULT:
+            #     print(number)
+            # print("-----")
+            break
+        n += 1
 
 
 def check(group):
@@ -12,7 +28,6 @@ def check(group):
     ret = 0
     for i in group:
         tmp = friends(i, [], group, [i], 1)
-
         if tmp > ret:
             ret = tmp
     return ret
@@ -61,16 +76,4 @@ def gen_group(num):
 
 
 if __name__ == '__main__':
-    while True:
-        STEP = check(gen_group(N))
-        if STEP >= MAX_STEP:
-            print()
-            print("[steps]")
-            for number in RESULT:
-                print(number)
-
-            print()
-            print("N =", N, "MAX_STEP =", STEP)
-            print("-----")
-            break
-        N += 1
+    solve()

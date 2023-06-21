@@ -3,8 +3,16 @@
 N = 12
 
 
+def solve():
+    """解答
+    """
+    cnt = move(N, [[0, 0]])
+    print(f'cnt = {cnt}')
+
+
 def move(num, log):
-    """ロボット移動"""
+    """ロボット移動
+    """
     if len(log) == num + 1:
         return 1
     cnt = 0
@@ -15,5 +23,4 @@ def move(num, log):
 
 
 if __name__ == '__main__':
-    cnt = move(N, [[0, 0]])
-    print(f'cnt = {cnt}')
+    solve()
