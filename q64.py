@@ -1,8 +1,5 @@
-#!/usr/bin/env python
+"""Q64
 """
-Q64
-"""
-
 import itertools
 
 N = 5

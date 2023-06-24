@@ -1,8 +1,5 @@
-#!/usr/bin/env python
+"""Q65
 """
-Q65
-"""
-
 N = 12
 
 START = [i for i in range(1, N)] + [0]

@@ -1,9 +1,5 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
+"""Q49
 """
-Q49
-"""
-
 N = 8
 S = int("1" * N + "0" * N, 2)
 G1 = int("".join([str("10") for i in range(N)]), 2)

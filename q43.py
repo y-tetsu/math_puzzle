@@ -1,9 +1,5 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
+"""Q43
 """
-Q43
-"""
-
 N = 5
 START = [i for i in range(1, 2*N+1)]
 GOAL = START[::-1]

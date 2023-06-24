@@ -1,9 +1,5 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
+"""Q58
 """
-Q58
-"""
-
 N = 14
 STATUS = [[N, 0, 0, 0]]
 STEP = 0

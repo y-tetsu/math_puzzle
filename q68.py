@@ -1,8 +1,5 @@
-#!/usr/bin/env python
+"""Q68
 """
-Q68
-"""
-
 from functools import lru_cache
 
 N = 12

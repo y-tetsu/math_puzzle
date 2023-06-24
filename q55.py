@@ -1,9 +1,5 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
+"""Q55
 """
-Q55
-"""
-
 import itertools
 
 

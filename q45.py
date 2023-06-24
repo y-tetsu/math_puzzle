@@ -1,9 +1,5 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
+"""Q45
 """
-Q45
-"""
-
 N = 3
 T = [[-1 for i in range(N)] for j in range(N)]
 

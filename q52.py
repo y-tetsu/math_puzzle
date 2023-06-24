@@ -1,9 +1,5 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
+"""Q52
 """
-Q52
-"""
-
 import itertools
 
 N = 8

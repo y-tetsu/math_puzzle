@@ -1,6 +1,4 @@
-#!/usr/bin/env python
-"""
-Q63
+"""Q63
 """
 import datetime
 

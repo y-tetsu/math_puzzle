@@ -1,9 +1,5 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
+"""Q44
 """
-Q44
-"""
-
 MIN = 10
 MAX = 100
 MEMO = {}

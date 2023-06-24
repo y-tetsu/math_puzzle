@@ -1,7 +1,4 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-"""
-Q62
+"""Q62
 """
 M = 5
 N = 4

@@ -1,9 +1,5 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
+"""Q53
 """
-Q53
-"""
-
 M, N = 6, 5
 MEMO = {}
 

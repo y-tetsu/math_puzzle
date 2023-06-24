@@ -1,9 +1,5 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
+"""Q61
 """
-Q61
-"""
-
 import itertools
 
 M = 5

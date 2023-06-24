@@ -1,8 +1,5 @@
-#!/usr/bin/env python
+"""Q67
 """
-Q67
-"""
-
 import itertools
 
 W, H = 6, 5

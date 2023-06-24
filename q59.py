@@ -1,9 +1,5 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
+"""Q59
 """
-Q59
-"""
-
 N = 8
 CIRCLE = [i + 1 for i in range(N)]
 LIMIT = 98

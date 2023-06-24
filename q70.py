@@ -1,8 +1,5 @@
-#!/usr/bin/env python
+"""Q70
 """
-Q70
-"""
-
 W, H = 6, 4
 
 GOAL = [

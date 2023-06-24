@@ -1,8 +1,5 @@
-#!/usr/bin/env python
+"""Q66
 """
-Q66
-"""
-
 H, W = 3, 4
 
 PANNEL = [

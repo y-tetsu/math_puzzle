@@ -1,9 +1,5 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
+"""Q50
 """
-Q50
-"""
-
 L = 5
 W = 6
 

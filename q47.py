@@ -1,9 +1,5 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
+"""Q47
 """
-Q47
-"""
-
 import itertools
 
 N = 4
