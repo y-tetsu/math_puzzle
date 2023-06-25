@@ -37,6 +37,8 @@ def search(puzzle, x, y):
         puzzle[y*W+x] = WHITE  # 白に戻す
 
     return cnt
+
+
 def is_continuous(puzzle, x, y):
     """黒マス(1)が左か上に存在している
     """
