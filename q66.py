@@ -21,6 +21,7 @@ PANNEL = [
           ],
       ]
 
+
 def get_ptn(ary):
     if len(ary) < H*W:
         for i in range(len(PANNEL)):
@@ -53,6 +54,7 @@ def get_points(ptn):
 
     return points
 
+
 def is_onestroke(points):
     odd = 0
     for h in range(H+1):
@@ -62,6 +64,7 @@ def is_onestroke(points):
     if odd == 0 or odd == 2:
         return True
     return False
+
 
 if __name__ == '__main__':
     CNT = 0

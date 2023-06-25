@@ -1,63 +1,95 @@
 """Q67
 """
-import itertools
-
+BLACK, WHITE, DUMMY = 1, 0, 2
 W, H = 6, 5
 
-def is_adjacent(ptn):
-    for col in range(H):
-        for row in range(W):
-            if ptn[col * W + row] == "1":
-                if col - 1 >= 0 and ptn[(col - 1) * W + row] == "1":
-                    return True
-                if col + 1 < H  and ptn[(col + 1) * W + row] == "1":
-                    return True
-                if row - 1 >= 0 and ptn[col * W + (row - 1)] == "1":
-                    return True
-                if row + 1 < W  and ptn[col * W + (row + 1)] == "1":
-                    return True
 
-def is_separated(ptn):
+def solve():
+    """解答
+    """
+    puzzle = [WHITE] * W * H
+    print('cnt =', search(puzzle, 0, 0))
+
+
+def search(puzzle, x, y):
+    """パズルの探索
+    """
+    # 次の探索マスをセット
+    if x >= W:
+        x, y = 0, y+1
+
+    # 最後のマスまで来ていたら終了
+    if y >= H:
+        return 1
+
+    # 現在のマスを白のままとして、次のマスを探索
+    cnt = search(puzzle, x+1, y)
+
+    # 現在のマスに黒をおいても縦横連続しない場合
+    if not is_continuous(puzzle, x, y):
+
+        puzzle[y*W+x] = BLACK  # 黒を置く
+
+        # パズルが分断されていない場合、黒を置いて次のマスを探索
+        if not is_separated(puzzle):
+            cnt += search(puzzle, x+1, y)
+
+        puzzle[y*W+x] = WHITE  # 白に戻す
+
+    return cnt
+
+
+def is_continuous(puzzle, x, y):
+    """黒マス(1)が左か上に存在している
+    """
+    if x - 1 >= 0 and puzzle[y*W+(x-1)] == BLACK:
+        return True
+    if y - 1 >= 0 and puzzle[(y-1)*W+x] == BLACK:
+        return True
+    return False
+
+
+def is_separated(puzzle):
+    """黒マスが盤面を分断している
+    """
     start = 0
-    for index, value in enumerate(ptn):
-        if value == "0":
-            start = index
+    for i, value in enumerate(puzzle):
+        if value == WHITE:
+            start = i
             break
     else:
         return True
-
-    cnt1 = ptn.count("0")
-    cnt2 = check(ptn, start, [i for i in ptn])
-
+    # 白の数
+    cnt1 = puzzle.count(WHITE)
+    # 白の連続をDUMMYで埋めた数
+    dummy = [i for i in puzzle]
+    fill(puzzle, start, dummy, DUMMY)
+    cnt2 = dummy.count(DUMMY)
     if cnt1 == cnt2:
         return False
-
     return True
 
-def check(ptn, start, checked):
-    checked[start] = "2"
 
-    col = start // W
-    row = start % W
+def fill(puzzle, start, checked, value):
+    """白の場合埋める
+    """
+    if checked[start] == WHITE:
+        checked[start] = value
+        y = start // W
+        x = start % W
+        # 上
+        if y-1 >= 0:
+            fill(puzzle, (y-1)*W+x, checked, value)
+        # 下
+        if y+1 < H:
+            fill(puzzle, (y+1)*W+x, checked, value)
+        # 左
+        if x-1 >= 0:
+            fill(puzzle, y*W+(x-1), checked, value)
+        # 右
+        if x+1 < W and checked[y*W+(x+1)] == WHITE:
+            fill(puzzle, y*W+(x+1), checked, value)
 
-    cnt1, cnt2, cnt3, cnt4 = 0, 0, 0, 0
-
-    if col - 1 >= 0 and checked[(col - 1) * W + row] == "0":
-        cnt1 = check(ptn, (col - 1) * W + row, checked)
-    if col + 1 < H  and checked[(col + 1) * W + row] == "0":
-        cnt2 = check(ptn, (col + 1) * W + row, checked)
-    if row - 1 >= 0 and checked[col * W + (row - 1)] == "0":
-        cnt3 = check(ptn, col * W + (row - 1), checked)
-    if row + 1 < W  and checked[col * W + (row + 1)] == "0":
-        cnt4 = check(ptn, col * W + (row + 1), checked)
-
-    return checked.count("2")
 
 if __name__ == '__main__':
-    CNT = 0
-    for ptn in itertools.product("01", repeat=W*H):
-        if not is_adjacent(ptn):
-            if not is_separated(ptn):
-                CNT += 1
-                print(CNT)
-    print("result =", CNT)
+    solve()
