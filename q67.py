@@ -38,7 +38,6 @@ def search(puzzle, x, y):
 
     return cnt
 
-
 def is_continuous(puzzle, x, y):
     """黒マス(1)が左か上に存在している
     """
