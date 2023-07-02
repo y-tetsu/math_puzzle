@@ -5,6 +5,8 @@ T = [[-1 for i in range(N)] for j in range(N)]
 
 
 def solve():
+    """解答
+    """
     print('cnt =', pattern(N, prime(N), [], T, 0))
 
 
