@@ -19,4 +19,4 @@ jobs:
       - name: get python version
         run: python -V
       - name: unittest for python
-        run: python -m unittest discover tests
+        run: python -m unittest discover tests -v
