@@ -3,6 +3,21 @@
 import itertools
 
 N = 5
+DX = [[1, 0], [0, -1], [-1, 0], [0, 1]]
+
+
+def solve():
+    """解答
+    """
+    a = [[0, 0, -1]]
+    b = [[N - 1, N - 1, -1]]
+    cnt = 0
+
+    for maze in itertools.product([0, 1], repeat=N * N - 2):
+        if search([0] + list(maze) + [0], a, 3, b, 1):
+            cnt += 1
+
+    print("cnt =", cnt)
 
 
 def search(maze, p1, d1, p2, d2):
@@ -19,10 +34,10 @@ def search(maze, p1, d1, p2, d2):
 
     pre = p1[-1]
 
-    for i in range(len(dx)):
-        d = (d1 - 1 + i) % len(dx)
-        px = pre[0] + dx[d][0]
-        py = pre[1] + dx[d][1]
+    for i in range(len(DX)):
+        d = (d1 - 1 + i) % len(DX)
+        px = pre[0] + DX[d][0]
+        py = pre[1] + DX[d][1]
 
         if px >= 0 and px < N and py >= 0 and py < N and maze[px + N * py] == 0:
             return search(maze, p2, d2, p1 + [[px, py, d]], d)
@@ -32,13 +47,4 @@ def search(maze, p1, d1, p2, d2):
 
 
 if __name__ == '__main__':
-    dx = [[1, 0], [0, -1], [-1, 0], [0, 1]]
-    a = [[0, 0, -1]]
-    b = [[N - 1, N - 1, -1]]
-    cnt = 0
-
-    for maze in itertools.product([0, 1], repeat=N * N - 2):
-        if search([0] + list(maze) + [0], a, 3, b, 1):
-            cnt += 1
-
-    print("result =", cnt)
+    solve()
