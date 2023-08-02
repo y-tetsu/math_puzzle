@@ -8,9 +8,14 @@ MEMO_S = {}
 MEMO_G = {}
 
 
-def throw_ball(person):
+def solve():
+    """解答
     """
-    ボールを投げる
+    print("cnt =", search([START], [GOAL], 0))
+
+
+def throw_ball(person):
+    """ボールを投げる
     """
     ret = []
     for num, _ in enumerate(person):
@@ -34,8 +39,7 @@ def throw_ball(person):
 
 
 def search(start, goal, count):
-    """
-    探索
+    """探索
     """
     ret_start = []
     ret_goal = []
@@ -70,4 +74,4 @@ def search(start, goal, count):
 
 
 if __name__ == '__main__':
-    print("result =", search([START], [GOAL], 0))
+    solve()
