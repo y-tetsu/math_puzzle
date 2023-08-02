@@ -1,7 +1,7 @@
 """Q02
 """
 import unittest
-from common import solve
+from test_common import solve
 import q02
 
 
