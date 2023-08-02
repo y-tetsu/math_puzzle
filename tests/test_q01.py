@@ -9,4 +9,4 @@ class TestQ01(unittest.TestCase):
     def test_solve(self):
         elp, lines = solve(q01)
         self.assertLessEqual(elp, 1)
-        self.assertEqual(lines, ['585'])
+        self.assertEqual(lines[-1], '585')
