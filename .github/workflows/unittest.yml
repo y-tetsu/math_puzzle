@@ -4,13 +4,13 @@ on:
   push:
     paths:
       - '*.py'
-      
+
 jobs:
   unittest:
     runs-on: ubuntu-latest
     steps:
       - name: Setup Python
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v3
         with:
           python-version: 3.10.12
           architecture: x64
