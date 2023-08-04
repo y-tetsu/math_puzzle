@@ -3,23 +3,36 @@
 H, W = 3, 4
 
 PANNEL = [
-          [
-              [2, 2],
-              [2, 2],
-          ],
-          [
-              [3, 2],
-              [2, 3],
-          ],
-          [
-              [2, 3],
-              [3, 2],
-          ],
-          [
-              [3, 3],
-              [3, 3],
-          ],
-      ]
+    [
+        [2, 2],
+        [2, 2],
+    ],
+    [
+        [3, 2],
+        [2, 3],
+    ],
+    [
+        [2, 3],
+        [3, 2],
+    ],
+    [
+        [3, 3],
+        [3, 3],
+    ],
+]
+
+
+def solve():
+    """解答
+    """
+    CNT = 0
+    for ptn in get_ptn([]):
+        points = get_points(ptn)
+        if is_onestroke(points):
+            print("ptn", ptn)
+            print("points", points)
+            CNT += 1
+    print("cnt =", CNT)
 
 
 def get_ptn(ary):
@@ -67,11 +80,4 @@ def is_onestroke(points):
 
 
 if __name__ == '__main__':
-    CNT = 0
-    for ptn in get_ptn([]):
-        points = get_points(ptn)
-        if is_onestroke(points):
-            print("ptn", ptn)
-            print("points", points)
-            CNT += 1
-    print("result =", CNT)
+    solve()
