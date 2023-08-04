@@ -7,6 +7,12 @@ EMPTY, OCCUPIED, WALL = 0, 1, 2
 SEATS = [WALL] + [EMPTY] * (N//2) + [WALL] + [EMPTY] * (N//2) + [WALL]
 
 
+def solve():
+    """解答
+    """
+    print("cnt =", search(tuple(SEATS)))
+
+
 @lru_cache(maxsize=None)
 def search(tseats):
     seats = list(tseats)
@@ -34,4 +40,4 @@ def search(tseats):
 
 
 if __name__ == '__main__':
-    print("result =", search(tuple(SEATS)))
+    solve()
