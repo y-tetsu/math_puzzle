@@ -12,6 +12,23 @@ GOAL = [
 MEMO = {}
 
 
+def solve():
+    """解答
+    """
+    next_patterns = GOAL
+    depth = 0
+
+    while True:
+        if next_patterns:
+            next_patterns = check(next_patterns, depth)
+            depth += 1
+        else:
+            break
+
+    print("cnt = ", sum([1 for value in MEMO.values() if value == depth - 1]))
+    print("max move =", depth - 1)
+
+
 def check(patterns, depth):
     next_patterns = []
 
@@ -53,15 +70,4 @@ def check(patterns, depth):
 
 
 if __name__ == '__main__':
-    next_patterns = GOAL
-    depth = 0
-
-    while True:
-        if next_patterns:
-            next_patterns = check(next_patterns, depth)
-            depth += 1
-        else:
-            break
-
-    print("ptn = ", sum([1 for value in MEMO.values() if value == depth - 1]))
-    print("max move =", depth - 1)
+    solve()
