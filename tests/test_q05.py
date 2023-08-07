@@ -1,7 +1,7 @@
 """Q05
 """
 import unittest
-from test_common import solve
+from tests.common import solve
 import q05
 
 
