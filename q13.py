@@ -16,11 +16,7 @@ def solve():
         skill = s * 10000 + k * 1000 + i * 100 + l * 10 + l
         if read + write + talk == skill:
             cnt += 1
-            print(f'({cnt})')
-            print(f'read  = {read}')
-            print(f'write = {write}')
-            print(f'talk  = {talk}')
-            print(f'skill = {skill}\n')
+            print(f'{read} + {write} + {talk} = {skill}')
     print(f'cnt = {cnt}')
 
 
