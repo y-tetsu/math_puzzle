@@ -15,7 +15,8 @@ def solve():
     """解答
     """
     s = search('', COUNTRIES, [])
-    print(f'cnt = {len(s)} : {" → ".join(s)}')
+    print(f'cnt = {len(s)}')
+    print(f'{" → ".join(s)}')
 
 
 def search(key, keys, buf):
