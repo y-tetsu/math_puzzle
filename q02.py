@@ -17,10 +17,10 @@ def solve():
             # 数値の先頭の0は消す
             form = re.sub(r'(^|\W+)0+(\d)', r'\1\2', form)
             # 0割りを除外する
-            if not re.search(r'/ 0', form):
-                if len(form) > 4:
-                    if val == eval(form):
-                        print(f'{c[3]}{c[2]}{c[1]}{c[0]} ({form} = {val})')
+            # if not re.search(r'/ 0', form):
+            if len(form) > 4:
+                if val == eval(form):
+                    print(f'{c[3]}{c[2]}{c[1]}{c[0]} ({form} = {val})')
 
 
 if __name__ == '__main__':
