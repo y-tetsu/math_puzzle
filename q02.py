@@ -20,7 +20,7 @@ def solve():
             # if not re.search(r'/ 0', form):
             if len(form) > 4:
                 if val == eval(form):
-                    print(f'{c[3]}{c[2]}{c[1]}{c[0]} ({form} = {val})')
+                    print(f'{c[::-1]} ({form} = {val})')
 
 
 if __name__ == '__main__':
