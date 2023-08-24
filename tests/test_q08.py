@@ -11,5 +11,5 @@ class TestQ08(unittest.TestCase):
         expected = [
             'cnt = 324932',
         ]
-        self.assertLessEqual(elp, 3)
+        self.assertLessEqual(elp, 2)
         self.assertEqual(lines[-1:], expected)
