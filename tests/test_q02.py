@@ -11,5 +11,5 @@ class TestQ02(unittest.TestCase):
         expected = [
             '5931 (5 * 9 * 31 = 1395)',
         ]
-        self.assertLessEqual(elp, 10)
+        self.assertLessEqual(elp, 5)
         self.assertEqual(lines[-1:], expected)
