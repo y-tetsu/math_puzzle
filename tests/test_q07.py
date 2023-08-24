@@ -16,5 +16,5 @@ class TestQ07(unittest.TestCase):
             '20020505 : 1001100010111110100011001',
             '20130201 : 1001100110010100110011001',
         ]
-        self.assertLessEqual(elp, 2)
+        self.assertLessEqual(elp, 1)
         self.assertEqual(lines[-6:], expected)
